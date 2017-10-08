@@ -13,6 +13,9 @@ var todoAppModule = angular.module("todoApp", ["ngResource"])
 	//add new todo item
 	$scope.addTodo = function (description) {
 		
+		if(description.length==0)
+			return;
+		
 		var todoItem = {
 				action : description,
 				done : false,
