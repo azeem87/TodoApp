@@ -4,6 +4,7 @@ package com.emirates.todoapp.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,11 @@ import com.emirates.todoapp.services.CrudService;
 @RestController
 @RequestMapping(value="/todos")
 public class TodoCrudController {
+	
+	
+	@Value("${con.key2}")
+	String conKey2;
+	
 	@Autowired CrudService crudService;
 	
 	@RequestMapping(method = RequestMethod.GET)

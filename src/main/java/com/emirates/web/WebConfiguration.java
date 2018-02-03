@@ -1,11 +1,14 @@
 package com.emirates.web;
 
 import org.h2.server.web.WebServlet;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
-@Configuration
+import com.emirates.util.PropertiesUtils;
+
 public class WebConfiguration {
 	
 	/**
@@ -14,11 +17,7 @@ public class WebConfiguration {
 	 * console at http://localhost:8080/console.
 	 * */
 	
-	@Bean
-	public ServletRegistrationBean h2servletRegistration() {
-	    ServletRegistrationBean registration = new ServletRegistrationBean(new WebServlet());
-	    registration.addUrlMappings("/console/*");
-	    return registration;
-	}
+	
+
 
 }
